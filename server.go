@@ -40,7 +40,7 @@ func handleWrite(w http.ResponseWriter, r *http.Request, session *gocql.Session)
 		metric_name := ""
 
 		for _, l := range ts.Labels {
-			if l.Name == labels.MetricNameLabel {
+			if l.Name == model.MetricNameLabel {
 				metric_name = l.Value
 			} else {
 				metric[model.LabelName(l.Name)] = model.LabelValue(l.Value)
